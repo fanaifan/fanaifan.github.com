@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Zhang Peng's Blog]]></title>
+  <link href="http://fanaifan.github.com/atom.xml" rel="self"/>
+  <link href="http://fanaifan.github.com/"/>
+  <updated>2013-02-27T16:56:38+08:00</updated>
+  <id>http://fanaifan.github.com/</id>
+  <author>
+    <name><![CDATA[Zhang Peng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[拥有一个属于自己github pages]]></title>
+    <link href="http://fanaifan.github.com/blog/2013/02/27/first-post/"/>
+    <updated>2013-02-27T16:26:00+08:00</updated>
+    <id>http://fanaifan.github.com/blog/2013/02/27/first-post</id>
+    <content type="html"><![CDATA[<p><strong>用了很久终于能在github上有了这第一篇博客,不能说是很高兴,至少自己很满足.</strong></p>
+
+<p>下面和大家分享一下,我弄的这个博客的过程.</p>
+
+<p>先介绍一下,我的机器系统环境:Mac OSX 10.8.2</p>
+
+<blockquote><p>如果大家不是Unix系列系统也没有关系,操作差异也不是很大.但是建议使用Linux系统,比如Ubuntu,ArchLinux</p></blockquote>
+
+<h2>首先准备装备</h2>
+
+<h3>1. ruby的安装</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl -L https://get.rvm.io | bash -s stable
+</span><span class='line'>sudo rvm install 1.9.3
+</span><span class='line'>rvm use 1.9.3
+</span><span class='line'>ruby -v
+</span><span class='line'>rvm --default 1.9.3</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>2. Jekyll的安装</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install jekyll</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>小建议:由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败,你可以先执行下面的命令在安装jekyll</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem sources --remove https://rubygems.org/
+</span><span class='line'>$ gem sources -a http://ruby.taobao.org/
+</span><span class='line'>$ gem sources -l
+</span><span class='line'>*** CURRENT SOURCES ***
+</span><span class='line'>
+</span><span class='line'>http://ruby.taobao.org</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>
