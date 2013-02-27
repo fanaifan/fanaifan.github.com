@@ -4,7 +4,7 @@
   <title><![CDATA[Zhang Peng's Blog]]></title>
   <link href="http://fanaifan.github.com/atom.xml" rel="self"/>
   <link href="http://fanaifan.github.com/"/>
-  <updated>2013-02-27T16:58:43+08:00</updated>
+  <updated>2013-02-27T17:22:16+08:00</updated>
   <id>http://fanaifan.github.com/</id>
   <author>
     <name><![CDATA[Zhang Peng]]></name>
@@ -26,7 +26,7 @@
 
 <blockquote><p>如果大家不是Unix系列系统也没有关系,操作差异也不是很大.但是建议使用Linux系统,比如Ubuntu,ArchLinux</p></blockquote>
 
-<h2>首先准备装备</h2>
+<h2>首先准备环境</h2>
 
 <h3>1. ruby的安装</h3>
 
@@ -64,7 +64,26 @@
 </span><span class='line'>http://ruby.taobao.org</span></code></pre></td></tr></table></div></figure>
 
 
+<h3>3.安装rdiscount来解析markdown语言</h3>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install rdiscount</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>4.pygments&#8211;支持语法高亮，要装python</h3>
+
+<p><code>这个可以选装,一开始不安装这个不影响你写博客</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo port install python25 py25-pygments
+</span><span class='line'>sudo ln -s &lt;py25-pygments> &lt;pygments></span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>ok,到这里环境基本准备齐了,该开始干活了</strong></p>
+
+<p>如果没有什么好的模板可以借鉴一下大师们的
+<a href="https://github.com/mojombo/jekyll/wiki/Sites">https://github.com/mojombo/jekyll/wiki/Sites</a></p>
 ]]></content>
   </entry>
   
