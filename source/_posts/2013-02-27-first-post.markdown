@@ -15,6 +15,15 @@ categories:
 
 > 如果大家不是Unix系列系统也没有关系,操作差异也不是很大.但是建议使用Linux系统,比如Ubuntu,ArchLinux
 
+**首先介绍一下需要安装的环境**
+
+1.ruby,一种语言,这个不用介绍了
+
+2.jekyll是ruby的一个gem,同时我们主要用这个来写我们的博客
+
+3.rdiscount用来解析markdown的
+
+
 ##首先准备环境
 
 ###1. ruby的安装
