@@ -163,6 +163,14 @@ rake setup_github_pages
 rake deploy
 {% endcodeblock%}
 
+**保存源代码**
+
+{% codeblock %}
+git add .
+git commit -m 'blog'
+git push origin source
+{% endcodeblock%}
+
 
 
 
