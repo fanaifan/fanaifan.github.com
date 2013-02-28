@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Zhang Peng's Blog</title>
+  <title>介绍一下octopress的使用 - Zhang Peng's Blog</title>
   <meta name="author" content="Zhang Peng">
 
   
@@ -19,7 +19,7 @@ brew &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://fanaifan.github.com/">
+  <link rel="canonical" href="http://fanaifan.github.com/blog/2013/02/27/use-octopress/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,15 +63,12 @@ brew &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/27/use-octopress/">介绍一下octopress的使用</a></h1>
+      <h1 class="entry-title">介绍一下octopress的使用</h1>
     
     
       <p class="meta">
@@ -94,7 +91,7 @@ brew &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>octopress的自己的标题<em>A blogging framework for hackers.</em>就很霸气,我很喜欢.</p>
+<div class="entry-content"><p>octopress的自己的标题<em>A blogging framework for hackers.</em>就很霸气,我很喜欢.</p>
 
 <p>官方网站:<a href="http://octopress.org/">http://octopress.org/</a></p>
 
@@ -298,22 +295,16 @@ brew &hellip;">
 
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/27/first-post/">拥有一个属于自己github Pages</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Zhang Peng</span></span>
+
+      
 
 
 
@@ -325,106 +316,32 @@ brew &hellip;">
   
 
 
-<time datetime="2013-02-27T16:26:00+08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-02-27T18:07:00+08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p><strong>用了很久终于能在github上有了这第一篇博客,不能说是很高兴,至少自己很满足.</strong></p>
-
-<p>下面和大家分享一下,我弄的这个博客的过程.</p>
-
-<p>先介绍一下,我的机器系统环境:Mac OSX 10.8.2</p>
-
-<blockquote><p>如果大家不是Unix系列系统也没有关系,操作差异也不是很大.但是建议使用Linux系统,比如Ubuntu,ArchLinux</p></blockquote>
-
-<h2>首先准备环境</h2>
-
-<h3>1. ruby的安装</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>curl -L https://get.rvm.io | bash -s stable
-</span><span class='line'>sudo rvm install 1.9.3
-</span><span class='line'>rvm use 1.9.3
-</span><span class='line'>ruby -v
-</span><span class='line'>rvm --default 1.9.3</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>2. Jekyll的安装</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install jekyll</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>小建议:由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败,你可以先执行下面的命令在安装jekyll</p></blockquote>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem sources --remove https://rubygems.org/
-</span><span class='line'>$ gem sources -a http://ruby.taobao.org/
-</span><span class='line'>$ gem sources -l
-</span><span class='line'>*** CURRENT SOURCES ***
-</span><span class='line'>
-</span><span class='line'>http://ruby.taobao.org</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>3.安装rdiscount来解析markdown语言</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install rdiscount</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>4.pygments&#8211;支持语法高亮，要装python</h3>
-
-<p><code>这个可以选装,一开始不安装这个不影响你写博客</code></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo port install python25 py25-pygments
-</span><span class='line'>sudo ln -s &lt;py25-pygments> &lt;pygments></span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>ok,到这里环境基本准备齐了,该开始干活了</strong></p>
-
-<p>如果没有什么好的模板可以借鉴一下大师们的
-<a href="https://github.com/mojombo/jekyll/wiki/Sites">https://github.com/mojombo/jekyll/wiki/Sites</a></p>
-
-<h3>介绍一款写markdown的神器: Mou</h3>
-
-<p><img src="http://mouapp.com/Mou_128.png" alt="Mou icon" /></p>
-
-<h3><strong>下面为大家推荐几篇比较好的文章:</strong></h3>
-
-<p>创建github账户 <a href="http://www.worldhello.net/gotgithub/02-join-github/010-account-setup.html">http://www.worldhello.net/gotgithub/02-join-github/010-account-setup.html</a></p>
-
-<p>用Jekyll构建静态网站 <a href="http://yanping.me/cn/blog/2011/12/15/building-static-sites-with-jekyll/">http://yanping.me/cn/blog/2011/12/15/building-static-sites-with-jekyll/</a></p>
-
-<p>在github pages绑定自己的域名 <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">https://help.github.com/articles/setting-up-a-custom-domain-with-pages</a></p>
-
-<p><em>介绍一款jekyll的框架octopress,很不错哦,下篇给大家絮叨一下.</em></p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://fanaifan.github.com/blog/2013/02/27/use-octopress/" data-via="" data-counturl="http://fanaifan.github.com/blog/2013/02/27/use-octopress/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/02/27/first-post/" title="上一篇: 拥有一个属于自己github pages">&laquo; 拥有一个属于自己github pages</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -449,6 +366,7 @@ brew &hellip;">
 
   
 </aside>
+
 
     </div>
   </div>
