@@ -9,8 +9,15 @@
   <meta name="author" content="Zhang Peng">
 
   
-  <meta name="description" content="octopress的自己的标题A blogging framework for hackers.就很霸气,我很喜欢. 官方网站:http://octopress.org/ 前期准备 1.安装git git的使用,在以后为大家介绍,先安装能使用了 快捷安装: Mac的安装 1
-brew &hellip;">
+  <meta name="description" content="每次处理一个字符 1
+2
+3
+4
+5
+import sets
+magic_chars = sets.Set(&#39;abrddd&#39;)
+poppins_chars = sets.Set(&#39;bdccc&#39;)
+print &#39;&#39;.join(magic_chars & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +72,97 @@ brew &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/14/python-cook-book-note-1/">Python Cookbook 笔记 1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-14T11:27:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/14/python-cook-book-note-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>每次处理一个字符</h2>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">sets</span>
+</span><span class='line'><span class="n">magic_chars</span> <span class="o">=</span> <span class="n">sets</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="s">&#39;abrddd&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">poppins_chars</span> <span class="o">=</span> <span class="n">sets</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="s">&#39;bdccc&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">magic_chars</span> <span class="o">&amp;</span> <span class="n">poppins_chars</span><span class="p">)</span> <span class="c">#集合的交集</span>
+</span><span class='line'><span class="c"># ==&gt; bd</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>字符和字符值之间的转换</h2>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>  <span class="c"># ==&gt; 97</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>   <span class="c"># ==&gt; a</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">ord</span><span class="p">(</span><span class="s">u&#39;</span><span class="se">\u2020</span><span class="s">&#39;</span><span class="p">)</span>  <span class="c"># ==&gt; 8224</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">unichr</span><span class="p">(</span><span class="mi">8224</span><span class="p">))</span>  <span class="c"># ==&gt; u&#39;\u2020&#39;</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">))</span>  <span class="c"># ==&gt; &#39;a&#39;</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">97</span><span class="p">))</span>  <span class="c"># ==&gt; &#39;97&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>repr() 用来取得对象的规范字符串表示
+chr() 将一个小整数作为参数并返回对应于ASCII单字符的字符串
+str() 以任何整数为参数,返回一个该整数的文本形式的字符串
+</code></pre>
+
+<p><strong>把一个字符串转化为一个包含各个字符的值的列表</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="s">&#39;ciao&#39;</span><span class="p">)</span> <span class="c"># ==&gt; [99, 105, 97, 111]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>通过一个包含了字符值的列表创建字符串</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">chr</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">97</span><span class="p">,</span><span class="mi">100</span><span class="p">)))</span> <span class="c"># ==&gt; abc</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>测试一个对象是否是类字符串</h2>
+
+<blockquote><p>获得事后原谅总是比事先得到许可要容易得多(It&#8217;s easier to ask forgiveness than permission) 简称:EAFP</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -452,6 +550,10 @@ brew &hellip;">
     <section>
   <h1>最新文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/python-cook-book-note-1/">python cookbook 笔记 1</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/27/use-octopress/">介绍一下octopress的使用</a>

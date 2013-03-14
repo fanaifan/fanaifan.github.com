@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>python cookbook 笔记 1 - Zhang Peng's Blog</title>
+  <meta name="author" content="Zhang Peng">
+
+  
+  <meta name="description" content="每次处理一个字符 1
+2
+3
+4
+5
+import sets
+magic_chars = sets.Set(&#39;abrddd&#39;)
+poppins_chars = sets.Set(&#39;bdccc&#39;)
+print &#39;&#39;.join(magic_chars & &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fanaifan.github.com/blog/2013/03/14/python-cook-book-note-1/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Zhang Peng's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Zhang Peng's Blog</a></h1>
+  
+    <h2>学习和生活日记.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:fanaifan.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">博客</a></li>
+  <li><a href="/blog/archives">目录</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Python Cookbook 笔记 1</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-14T11:27:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>每次处理一个字符</h2>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">sets</span>
+</span><span class='line'><span class="n">magic_chars</span> <span class="o">=</span> <span class="n">sets</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="s">&#39;abrddd&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">poppins_chars</span> <span class="o">=</span> <span class="n">sets</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="s">&#39;bdccc&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">magic_chars</span> <span class="o">&amp;</span> <span class="n">poppins_chars</span><span class="p">)</span> <span class="c">#集合的交集</span>
+</span><span class='line'><span class="c"># ==&gt; bd</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>字符和字符值之间的转换</h2>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>  <span class="c"># ==&gt; 97</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>   <span class="c"># ==&gt; a</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">ord</span><span class="p">(</span><span class="s">u&#39;</span><span class="se">\u2020</span><span class="s">&#39;</span><span class="p">)</span>  <span class="c"># ==&gt; 8224</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">unichr</span><span class="p">(</span><span class="mi">8224</span><span class="p">))</span>  <span class="c"># ==&gt; u&#39;\u2020&#39;</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">))</span>  <span class="c"># ==&gt; &#39;a&#39;</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">97</span><span class="p">))</span>  <span class="c"># ==&gt; &#39;97&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>repr() 用来取得对象的规范字符串表示
+chr() 将一个小整数作为参数并返回对应于ASCII单字符的字符串
+str() 以任何整数为参数,返回一个该整数的文本形式的字符串
+</code></pre>
+
+<p><strong>把一个字符串转化为一个包含各个字符的值的列表</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="s">&#39;ciao&#39;</span><span class="p">)</span> <span class="c"># ==&gt; [99, 105, 97, 111]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>通过一个包含了字符值的列表创建字符串</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">chr</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">97</span><span class="p">,</span><span class="mi">100</span><span class="p">)))</span> <span class="c"># ==&gt; abc</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>测试一个对象是否是类字符串</h2>
+
+<blockquote><p>获得事后原谅总是比事先得到许可要容易得多(It&#8217;s easier to ask forgiveness than permission) 简称:EAFP</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Zhang Peng</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-14T11:27:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/02/27/use-octopress/" title="上一篇: 介绍一下octopress的使用">&laquo; 介绍一下octopress的使用</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最新文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/python-cook-book-note-1/">python cookbook 笔记 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/27/use-octopress/">介绍一下octopress的使用</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/27/first-post/">拥有一个属于自己github pages</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Zhang Peng -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fanaifan';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fanaifan.github.com/blog/2013/03/14/python-cook-book-note-1/';
+        var disqus_url = 'http://fanaifan.github.com/blog/2013/03/14/python-cook-book-note-1/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
