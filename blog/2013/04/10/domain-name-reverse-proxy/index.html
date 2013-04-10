@@ -5,15 +5,19 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>博客列表 - Zhang Peng's Blog</title>
+  <title>cloudfoundry 域名绑定 - Zhang Peng's Blog</title>
   <meta name="author" content="Zhang Peng">
 
   
-  <meta name="description" content="博客列表 2013 cloudfoundry 域名绑定
-Apr 10 2013 python cookbook 笔记 1
-Mar 14 2013 介绍一下octopress的使用
-Feb 27 2013 拥有一个属于自己github pages
-Feb 27 2013 最新文章 &hellip;">
+  <meta name="description" content="用一种不同的方式将自己的域名绑定到cloudfoundry 申请一个免费空间:http://www.awardspace.com
+将要绑定的域名先添加到免费空间
+再将域名指向免费空间提供的A地址
+用ftp登陆免费空间添加一个.htaccess文件 .htaccess内容 1
+2
+3
+4
+5
+&lt &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +26,7 @@ Feb 27 2013 最新文章 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://fanaifan.github.com/blog/archives/">
+  <link rel="canonical" href="http://fanaifan.github.com/blog/2013/04/10/domain-name-reverse-proxy/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,62 +71,117 @@ Feb 27 2013 最新文章 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">博客列表</h1>
+    
+      <h1 class="entry-title">Cloudfoundry 域名绑定</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-10T21:22:00+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><h3>用一种不同的方式将自己的域名绑定到cloudfoundry</h3>
 
-  
-  <h2>2013</h2>
+<ul>
+<li><p>申请一个免费空间:<a href="http://www.awardspace.com">http://www.awardspace.com</a></p></li>
+<li><p>将要绑定的域名先添加到免费空间</p></li>
+<li><p>再将域名指向免费空间提供的A地址</p></li>
+<li><p>用ftp登陆免费空间添加一个.htaccess文件</p>
 
-<article>
-  
-<h1><a href="/blog/2013/04/10/domain-name-reverse-proxy/">cloudfoundry 域名绑定</a></h1>
-<time datetime="2013-04-10T21:22:00+08:00" pubdate><span class='month'>Apr</span> <span class='day'>10</span> <span class='year'>2013</span></time>
-
-
-</article>
-
+<p> <code>.htaccess内容</code></p></li>
+</ul>
 
 
-<article>
-  
-<h1><a href="/blog/2013/03/14/python-cook-book-note-1/">python cookbook 笔记 1</a></h1>
-<time datetime="2013-03-14T11:27:00+08:00" pubdate><span class='month'>Mar</span> <span class='day'>14</span> <span class='year'>2013</span></time>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;IfModule mod_rewrite.c>
+</span><span class='line'>  RewriteEngine on
+</span><span class='line'>  RewriteBase /
+</span><span class='line'>  RewriteRule ^(.*)$ http://yourdomain.com/$1 [P]
+</span><span class='line'>&lt;/IfModule></span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<ul>
+<li>等待域名解析成功</li>
+</ul>
 
 
+<p> <strong>提供个例子</strong> <a href="http://money.fanaifan.com">http://money.fanaifan.com</a></p>
 
-<article>
-  
-<h1><a href="/blog/2013/02/27/use-octopress/">介绍一下octopress的使用</a></h1>
-<time datetime="2013-02-27T18:07:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>27</span> <span class='year'>2013</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/02/27/first-post/">拥有一个属于自己github pages</a></h1>
-<time datetime="2013-02-27T16:26:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>27</span> <span class='year'>2013</span></time>
-
-
-</article>
-
+<pre><code>如果在设置的时候,有什么问题,直接留言,我会在第一时间回复尽可能的帮助您!
+</code></pre>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Zhang Peng</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-10T21:22:00+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/14/python-cook-book-note-1/" title="上一篇: python cookbook 笔记 1">&laquo; python cookbook 笔记 1</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -174,7 +233,10 @@ Feb 27 2013 最新文章 &hellip;">
       var disqus_shortname = 'fanaifan';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fanaifan.github.com/blog/2013/04/10/domain-name-reverse-proxy/';
+        var disqus_url = 'http://fanaifan.github.com/blog/2013/04/10/domain-name-reverse-proxy/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

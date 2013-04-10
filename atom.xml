@@ -4,7 +4,7 @@
   <title><![CDATA[Zhang Peng's Blog]]></title>
   <link href="http://fanaifan.github.com/atom.xml" rel="self"/>
   <link href="http://fanaifan.github.com/"/>
-  <updated>2013-03-14T17:55:51+08:00</updated>
+  <updated>2013-04-10T21:40:55+08:00</updated>
   <id>http://fanaifan.github.com/</id>
   <author>
     <name><![CDATA[Zhang Peng]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[cloudfoundry 域名绑定]]></title>
+    <link href="http://fanaifan.github.com/blog/2013/04/10/domain-name-reverse-proxy/"/>
+    <updated>2013-04-10T21:22:00+08:00</updated>
+    <id>http://fanaifan.github.com/blog/2013/04/10/domain-name-reverse-proxy</id>
+    <content type="html"><![CDATA[<h3>用一种不同的方式将自己的域名绑定到cloudfoundry</h3>
+
+<ul>
+<li><p>申请一个免费空间:<a href="http://www.awardspace.com">http://www.awardspace.com</a></p></li>
+<li><p>将要绑定的域名先添加到免费空间</p></li>
+<li><p>再将域名指向免费空间提供的A地址</p></li>
+<li><p>用ftp登陆免费空间添加一个.htaccess文件</p>
+
+<p> <code>.htaccess内容</code></p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;IfModule mod_rewrite.c>
+</span><span class='line'>  RewriteEngine on
+</span><span class='line'>  RewriteBase /
+</span><span class='line'>  RewriteRule ^(.*)$ http://yourdomain.com/$1 [P]
+</span><span class='line'>&lt;/IfModule></span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>等待域名解析成功</li>
+</ul>
+
+
+<p> <strong>提供个例子</strong> <a href="http://money.fanaifan.com">http://money.fanaifan.com</a></p>
+
+<pre><code>如果在设置的时候,有什么问题,直接留言,我会在第一时间回复尽可能的帮助您!
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[python cookbook 笔记 1]]></title>
